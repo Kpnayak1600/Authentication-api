@@ -1,0 +1,125 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "itbackend",
+    "dateExported": "2023-02-23T06:56:41.186Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "dcaec163-b859-4f16-89c3-b244fd5b4c6b",
+            "colId": "790d7e08-f28f-408c-99e1-f49ba7dd1aea",
+            "containerId": "",
+            "name": "login",
+            "url": "http://localhost:8080/api/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-02-22T14:10:22.696Z",
+            "modified": "2023-02-23T06:53:01.162Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\" : \"Admin@gmail.com\",\n  \"password\" : \"admin12345\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "93a8a706-b824-4e83-82e0-dda9ccf6d693",
+            "colId": "790d7e08-f28f-408c-99e1-f49ba7dd1aea",
+            "containerId": "",
+            "name": "optGenerate",
+            "url": "http://localhost:8080/api/generateOTP?email=Admin@gmail.com",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-02-22T14:21:37.206Z",
+            "modified": "2023-02-22T14:34:42.683Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "email",
+                    "value": "Admin@gmail.com",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "7b747e62-9171-408a-9288-8f9017a04e86",
+            "colId": "790d7e08-f28f-408c-99e1-f49ba7dd1aea",
+            "containerId": "",
+            "name": "otpVerify",
+            "url": "http://localhost:8080/api/verifyOTP?email=Admin@gmail.com&code=024157",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-02-22T14:22:41.847Z",
+            "modified": "2023-02-23T06:53:54.653Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "email",
+                    "value": "Admin@gmail.com",
+                    "isPath": false
+                },
+                {
+                    "name": "code",
+                    "value": "024157",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "5225ddfb-514e-482f-8013-be88478a1653",
+            "colId": "790d7e08-f28f-408c-99e1-f49ba7dd1aea",
+            "containerId": "",
+            "name": "resetPassword",
+            "url": "http://localhost:8080/api/resetPassword",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-02-22T14:30:28.150Z",
+            "modified": "2023-02-23T06:54:03.666Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": " {\n  \"email\" : \"Admin@gmail.com\",\n  \"password\" : \"admin123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "c25e511e-93f0-447f-8ba8-78bfdaaf7c92",
+            "colId": "790d7e08-f28f-408c-99e1-f49ba7dd1aea",
+            "containerId": "",
+            "name": "logout",
+            "url": "http://localhost:8080/api/logout",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-02-22T18:05:54.458Z",
+            "modified": "2023-02-22T18:06:11.316Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "82a27681-d6a6-47dd-8657-b0c2bfe5c0cf",
+            "colId": "790d7e08-f28f-408c-99e1-f49ba7dd1aea",
+            "containerId": "",
+            "name": "sendMail",
+            "url": "http://localhost:8080/api/registerMail",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-02-22T18:32:08.238Z",
+            "modified": "2023-02-23T06:53:28.589Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userEmail\" : \"kpnayak1600@gmail.com\",\n  \"OTP\" : \"024157\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}
