@@ -21,6 +21,7 @@ router.route('/createResetSession').get(controller.createResetSession) // reset 
 
 /** PUT Methods */
 router.route('/resetPassword').put(controller.verifyUser, controller.resetPassword); // use to reset password
+router.route('/createPassword').put(controller.verifyUser, controller.createPassword); // use to reset password
 
 
 

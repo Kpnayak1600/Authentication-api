@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "itbackend",
-    "dateExported": "2023-02-23T06:56:41.186Z",
+    "dateExported": "2023-02-25T20:47:12.474Z",
     "version": "1.1",
     "folders": [],
     "requests": [
@@ -14,12 +14,12 @@
             "method": "POST",
             "sortNum": 10000,
             "created": "2023-02-22T14:10:22.696Z",
-            "modified": "2023-02-23T06:53:01.162Z",
+            "modified": "2023-02-25T20:36:59.372Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"email\" : \"Admin@gmail.com\",\n  \"password\" : \"admin12345\"\n}",
+                "raw": "// {\n//   \"email\" : \"admin@gmail.com\",\n//   \"password\" : \"admin12345\"\n// }\n// {\n//   \"email\" : \"rohit@gmail.com\",\n//   \"password\" : \"rohit123\"\n// }\n{\n  \"email\" : \"ram@gmail.com\",\n  \"password\" : \"ram12345\"\n}\n",
                 "form": []
             },
             "tests": []
@@ -29,16 +29,16 @@
             "colId": "790d7e08-f28f-408c-99e1-f49ba7dd1aea",
             "containerId": "",
             "name": "optGenerate",
-            "url": "http://localhost:8080/api/generateOTP?email=Admin@gmail.com",
+            "url": "http://localhost:8080/api/generateOTP?email=admin@gmail.com",
             "method": "GET",
             "sortNum": 20000,
             "created": "2023-02-22T14:21:37.206Z",
-            "modified": "2023-02-22T14:34:42.683Z",
+            "modified": "2023-02-25T20:06:13.410Z",
             "headers": [],
             "params": [
                 {
                     "name": "email",
-                    "value": "Admin@gmail.com",
+                    "value": "admin@gmail.com",
                     "isPath": false
                 }
             ],
@@ -49,21 +49,21 @@
             "colId": "790d7e08-f28f-408c-99e1-f49ba7dd1aea",
             "containerId": "",
             "name": "otpVerify",
-            "url": "http://localhost:8080/api/verifyOTP?email=Admin@gmail.com&code=024157",
+            "url": "http://localhost:8080/api/verifyOTP?email=admin@gmail.com&code=453306",
             "method": "GET",
             "sortNum": 30000,
             "created": "2023-02-22T14:22:41.847Z",
-            "modified": "2023-02-23T06:53:54.653Z",
+            "modified": "2023-02-25T20:46:53.824Z",
             "headers": [],
             "params": [
                 {
                     "name": "email",
-                    "value": "Admin@gmail.com",
+                    "value": "admin@gmail.com",
                     "isPath": false
                 },
                 {
                     "name": "code",
-                    "value": "024157",
+                    "value": "453306",
                     "isPath": false
                 }
             ],
@@ -78,12 +78,12 @@
             "method": "PUT",
             "sortNum": 40000,
             "created": "2023-02-22T14:30:28.150Z",
-            "modified": "2023-02-23T06:54:03.666Z",
+            "modified": "2023-02-25T20:06:41.348Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": " {\n  \"email\" : \"Admin@gmail.com\",\n  \"password\" : \"admin123\"\n}",
+                "raw": " {\n  \"email\" : \"admin@gmail.com\",\n  \"password\" : \"admin12345\"\n}",
                 "form": []
             },
             "tests": []
@@ -111,12 +111,31 @@
             "method": "POST",
             "sortNum": 60000,
             "created": "2023-02-22T18:32:08.238Z",
-            "modified": "2023-02-23T06:53:28.589Z",
+            "modified": "2023-02-25T20:32:49.635Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"userEmail\" : \"kpnayak1600@gmail.com\",\n  \"OTP\" : \"024157\"\n}",
+                "raw": "{\n  \"userEmail\" : \"kpnayak1600@gmail.com\",\n  \"OTP\" : \"562401\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "839151a1-28fe-45bb-84d2-364f6c29efcc",
+            "colId": "790d7e08-f28f-408c-99e1-f49ba7dd1aea",
+            "containerId": "",
+            "name": "createPassword",
+            "url": "http://localhost:8080/api/createPassword",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2023-02-25T19:28:30.849Z",
+            "modified": "2023-02-25T20:36:26.279Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": " {\n  \"email\" : \"rohit@gmail.com\",\n  \"password\" : \"rohit123\"\n}",
                 "form": []
             },
             "tests": []

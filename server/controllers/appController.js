@@ -137,6 +137,55 @@ export async function resetPassword(req, res) {
 
 
 
+// create the password when we have valid session
+/** PUT: http://localhost:8080/api/createPassword */
+export async function createPassword(req, res) {
+    try {
+
+        if (!req.app.locals.resetSession) return res.status(440).send({ error: "Session expired!" });
+
+        const { email, password } = req.body;
+        if (password.length < 8) {
+            return res.status(404).send({ msg: "password must be of atleast 8 characters" });
+        }
+        try {
+
+            UserModel.findOne({ email })
+                .then(user => {
+                    if (user.password != "") {
+                        req.app.locals.resetSession = false;
+                        return res.status(404).send({ msg: "You already hava a password!" });
+                    }
+                    bcrypt.hash(password, 10)
+                        .then(hashedPassword => {
+                            UserModel.updateOne({ email },
+                                { password: hashedPassword }, function (err, data) {
+                                    if (err) throw err;
+                                    req.app.locals.resetSession = false; // reset session
+                                    return res.status(201).send({ msg: "your password created... !" })
+                                });
+                        })
+                        .catch(e => {
+                            return res.status(500).send({
+                                error: "Enable to hashed password"
+                            })
+                        })
+                })
+                .catch(error => {
+                    return res.status(404).send({ error: "Username not Found" });
+                })
+
+        } catch (error) {
+            return res.status(500).send({ error })
+        }
+
+    } catch (error) {
+        return res.status(401).send({ error })
+    }
+}
+
+
+
 //logout user
 /** PUT: http://localhost:8080/api/logout */
 export async function logout(req, res) {
