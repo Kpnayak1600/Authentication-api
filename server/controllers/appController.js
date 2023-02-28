@@ -67,14 +67,19 @@ export async function login(req, res) {
 
 /** GET: http://localhost:8080/api/generateOTP */
 export async function generateOTP(req, res) {
+    const { email } = req.body;
+    console.log(email);
     req.app.locals.OTP = await otpGenerator.generate(6, { lowerCaseAlphabets: false, upperCaseAlphabets: false, specialChars: false })
-    res.status(201).send({ code: req.app.locals.OTP })
+    res.status(201).send({
+        code: req.app.locals.OTP,
+        mail: email
+    })
 }
 
 
 /** GET: http://localhost:8080/api/verifyOTP */
 export async function verifyOTP(req, res) {
-    const { code } = req.query;
+    const { code } = req.method == "GET" ? req.query : req.body;
     if (parseInt(req.app.locals.OTP) === parseInt(code)) {
         req.app.locals.OTP = null; // reset the OTP value
         req.app.locals.resetSession = true; // start session for reset password
